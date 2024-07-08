@@ -86,13 +86,12 @@ const gameImage = {
 };
 
 
-const changeResultClasses =()=>{
-    
-}
-
 const changeResultImage =()=>{
     choosenImageEl.src=gameImage[userSelection];
     choosenImagePcEl.src=gameImage[pcUserSelection];
     whoWins();
     changeResultClasses();
 }
+
+
+
