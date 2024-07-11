@@ -17,7 +17,7 @@ let userSelection;
 let pcSelection;
 
 
-const options = ["paper","rock","scissors"];
+const pcOptions = ["paper","rock","scissors"];
 
 
 const gamesOptions = {
@@ -89,9 +89,51 @@ const gameImage = {
 const changeResultImage =()=>{
     choosenImageEl.src=gameImage[userSelection];
     choosenImagePcEl.src=gameImage[pcUserSelection];
-    whoWins();
+    results();
     changeResultClasses();
 }
 
 
+const changeResultClasses =()=>{
+    const firstUser = choosenImageEl.parentElement;
+    const lastUser = firstUser.classList.length-1;
 
+    const firstUserPc = choosenImagePcEl.parentElement;
+    const lastUserPc = firstUserPc.classList.length-1;
+
+    firstUser.classList.remove(firstUser.classList[lastUser]);
+    firstUser.classList.add(userSelection);
+
+    firstUserPc.classList.remove(firstUserPc.classList[lastUserPc]);
+    firstUserPc.classList.add(pcSelection)
+}
+
+const createPcSelection =()=>{
+    const randomNumber =Math.floor(Math.random()*pcOptions.length);
+    pcSelection = pcOptions[randomNumber];
+    console.log(userSelection +"---"+pcSelection);
+    changeResultImage()
+}
+
+const createUserSelection =(event)=>{
+    userSelection =event.target.dataset.item;
+    createPcSelection();
+}
+
+const hideGame = ()=>{
+    gameContainerEl.classList.add('hide');
+    moveContainerEl.classList.remove('hide');
+}
+
+const hideMove = ()=>{
+    gameContainerEl.classList.remove('hide');
+    gameContainerEl.classList.add('hide');
+}
+
+
+if (document.body.dataset.mode==="advanced"){
+    pcOptions.push('spock','lizard');
+};
+
+gameContainerEl.addEventListener("click",createUserSelection);
+retryEl.addEventListener("click",hideMove);
