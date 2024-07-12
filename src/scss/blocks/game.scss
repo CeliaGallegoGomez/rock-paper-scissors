@@ -1,0 +1,77 @@
+.game-img {
+    pointer-events: none;
+  }
+  .game-container {
+   margin-inline: auto;
+    background-image: url(../../assets/images/bg-pentagon.svg);
+    width: 300px;
+    height: 540px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    &--simple{
+      background-image: url(../../assets/images/bg-triangle.svg);
+    }
+  }
+  .game-item {
+    position: absolute;
+    &--scissors {
+      top: 320px;
+      left: 140px;
+    }
+    &--rock {
+      top: 590px;
+      left: 230px;
+    }
+    &--paper {
+      top: 430px;
+      left: 270px;
+    }
+    &--lizard{
+      top: 590px;
+      left: 50px;
+    }
+    &--spock{
+      top:430px;
+      left: 10px;
+    }
+  }
+  .scissors,
+  .paper,
+  .rock,
+  .lizard,
+  .spock {
+    display: flex;
+    padding: 15px;
+    border-radius: 100%;
+    width: 95px;
+    height: 95px;
+    background-color: white;
+  }
+  .paper {
+    border: 15px solid #5671f5;
+    &--simple{
+      top: 290px;
+      left: 20px;
+    }
+  }
+  .rock {
+    border: 15px solid #db2e4d;
+    &--simple{
+      top: 290px;
+      left: 250px;
+    }
+  }
+  .scissors{
+    border: 15px solid #eb9f0e;
+    &--simple{
+      top: 520px;
+      left: 140px;
+    }
+  }
+  .lizard{
+    border: 15px solid #834ee3;
+  }
+  .spock{
+    border: 15px solid #2d8dab;
+  }
