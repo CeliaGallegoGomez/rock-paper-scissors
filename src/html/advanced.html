@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>advanced</title>
+  </head>
+  <body data-mode="advanced" class="body">
+    <header class="header">
+      <div class="score">
+        <div class="score__container">
+          <span class="score__title">YOU</span>
+          <span class="score__points" id="points-user">0</span>
+        </div>
+        <div class="score__name-container">
+          <span class="score__name">ROCK</span>
+          <span class="score__name">PAPER</span>
+          <span class="score__name">SCISSORS</span>
+          <span class="score__name">LIZARD</span>
+          <span class="score__name">SPOCK</span>
+        </div>
+        <div class="score__container">
+          <span class="score__title">PC</span>
+          <span class="score__points" id="points-pc">0</span>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="game-container" id="game-container">
+        <div
+          class="paper game-item game-item--paper"
+          data-item="paper"
+          id="paper"
+        >
+          <img class="game-img" src="../assets/images/icon-paper.svg" alt="" />
+        </div>
+        <div
+          class="scissors game-item game-item--scissors"
+          data-item="scissors"
+          id="scissors"
+        >
+          <img
+            class="game-img"
+            src="../assets/images/icon-scissors.svg"
+            alt=""
+          />
+        </div>
+        <div class="rock game-item game-item--rock" data-item="rock" id="rock">
+          <img class="game-img" src="../assets/images/icon-rock.svg" alt="" />
+        </div>
+        <div
+          class="lizard game-item game-item--lizard"
+          data-item="lizard"
+          id="lizard"
+        >
+          <img class="game-img" src="../assets/images/icon-lizard.svg" alt="" />
+        </div>
+        <div
+          class="spock game-item game-item--spock"
+          data-item="spock"
+          id="spock"
+        >
+          <img class="game-img" src="../assets/images/icon-spock.svg" alt="" />
+        </div>
+      </div>
+      <div class="move-container hide" id="move-container">
+        <span>You picked</span>
+        <div class="user-move">
+          <img
+            src="../assets/images/icon-rock.svg"
+            id="picked-user-image"
+            alt="picked user image"
+          />
+        </div>
+        <div class="winning-section">
+          <span class="winning-text" id="winning-text"></span>
+          <button class="button button--try" id="try-again">Try Again</button>
+        </div>
+        <span>PC picked</span>
+        <div class="pc-move">
+          <img
+            src="../assets/images/icon-rock.svg"
+            id="picked-pc-image"
+            alt="picked pc image"
+          />
+        </div>
+      </div>
+      <button class="rules" id="rules">Rules</button>
+      <div class="rules__container">
+        <img src="../assets/images/image-rules-bonus.svg" alt="" />
+      </div>
+    </main>
+    <script type="module" src="../js/index.js"></script>
+  </body>
+</html>
